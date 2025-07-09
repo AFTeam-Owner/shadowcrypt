@@ -194,6 +194,10 @@ No backup. No undo. No surrender.
 
 ---
 
-<h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=22&pause=1200&color=FA00FF&center=true&vCenter=true&width=700&lines=I+am+the+dev+who+built+a+universe+in+silence...;It+doesn't+beg+to+be+seen+.+.+.+It+just+runs+.+.+.+like+me." alt="Typing SVG" />
-</h1>
+<p align="center">
+  <img 
+    src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=18&pause=1000&color=FA00FF&center=true&vCenter=true&width=1000&lines=I+didn’t+lose+her+—+I+never+truly+had+her,+yet+still,+I+never+wanted+to+let+her+go.;The+world+never+heard+my+pain,+so+I+carved+it+into+code+—+line+by+line,+wound+by+wound.;So+I+turned+to+code+—+the+only+place+my+pain+could+exist+without+judgment." 
+    alt="Typing SVG"
+    style="max-width: 100%; height: auto;" />
+</p>
+
