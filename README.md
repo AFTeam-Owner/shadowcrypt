@@ -25,11 +25,12 @@
 ## ⚙️ How It Works
 
 ```mermaid
+%%{ init { 'theme': 'default', 'themeVariables': { 'primaryColor': '#9b59b6', 'edgeLabelBackground':'#ffffff', 'fontSize':'16px', 'fontFamily':'Fira Code', 'textColor': '#000000' } } }%%
 graph TD
-    A[Original .py file] --> B[Encrypt with ShadowCrypt 🔐]
-    B --> C[🔒 Unreadable locked.py]
+    A[📄 Original .py file] --> B[✍️ Encrypt with ShadowCrypt]
+    B --> C[🔐 Unreadable locked.py]
     C --> D[🧠 Executes Normally]
-    C -. 🚫 Decryption Not Possible .-> X[❌ Not even ShadowCrypt creator!]
+    C -.-> E[🚫 Decryption Not Possible<br>❌ Not even ShadowCrypt creator!]
 ```
 
 ---
