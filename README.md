@@ -1,153 +1,122 @@
-# 🕶️ SHADOWCRYPT
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=24&pause=1000&color=FF44CC&center=true&vCenter=true&width=550&lines=🕶️+SHADOWCRYPT;Encrypt.+Execute.+Never+Expose.;AI+proof+.+Human+proof+.+Undecodable." alt="Typing SVG" />
+</h1>
 
 <p align="center">
-  <i>Encrypt. Execute. Never Expose.</i><br/>
-  The ultimate Python encryption system designed for absolute security.
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Decryption%20Possible-NO-red?style=flat-square&animation=glow" alt="No Decryption Possible"/>
-  <img src="https://img.shields.io/badge/AI%20Safe-100%25-brightgreen?style=flat-square&animation=glow" alt="AI Safe"/>
-  <img src="https://img.shields.io/badge/Platform-All%20OS-green?style=flat-square&animation=glow" alt="Cross Platform"/>
-  <img src="https://img.shields.io/github/stars/exampleuser/shadowcrypt?style=social&label=Stars&color=yellow&logo=github&logoColor=white&animation=glow" alt="GitHub stars"/>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=exampleuser.shadowcrypt" alt="Visitor Badge"/>
+  <img src="https://img.shields.io/badge/Decryption-NOT%20POSSIBLE-critical?style=for-the-badge&logo=protonmail&logoColor=white&color=red"/>
+  <img src="https://img.shields.io/badge/AI%20Proof-✅-green?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Platform-All%20OS-blue?style=for-the-badge&logo=linux"/>
+  <img src="https://badgen.net/badge/Encrypted%20Lines/∞/purple?icon=code"/>
+  <img src="https://img.shields.io/github/stars/YOUR_USERNAME/shadowcrypt?style=social"/>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=YOUR_USERNAME.shadowcrypt"/>
 </p>
 
 ---
 
-## 📑 Table of Contents
+## 💣 What is ShadowCrypt?
 
-- [What is ShadowCrypt?](#-what-is-shadowcrypt)
-- [Features](#-features)
-- [Live Demo](#-live-demo)
-- [Installation](#-installation)
-- [How It Works](#-how-it-works)
-- [Example Usage](#-example-usage)
-- [Security Design](#-security-design)
-- [FAQ](#-faq)
-- [Contributing](#-contributing)
-- [Contact](#-contact)
-- [License](#-license)
-
----
-
-## 🧠 What is ShadowCrypt?
-
-`shadowcrypt` is a revolutionary **Python code encryptor** that transforms your `.py` files into **impenetrable**, **unreadable**, yet fully **executable** Python scripts.  
-Empower your code with the highest level of protection — encrypt with confidence, knowing that no one, not even you, can decrypt the output.
-
----
-
-## ⚙️ Features
-
-- 🔐 Converts `.py` files into unreadable, encrypted scripts
-- 🚀 Encrypted scripts run seamlessly with `python encrypted.py`
-- 🧮 Pure mathematical encryption — no marshal, no base64, no eval tricks
-- 🔒 Zero decryptor availability — even the creator cannot reverse it
-- 🤖 AI and human reverse engineering resistant
-- 🌍 Cross-platform compatibility: Windows, Linux, macOS, Android (Termux)
-
----
-
-## 🎬 Live Demo
-
-![ShadowCrypt Encryption Demo](https://via.placeholder.com/700x350?text=ShadowCrypt+Encryption+Demo)
-
-Watch how effortlessly your Python code becomes secure and unbreakable!
-
----
-
-## 📦 Installation
-
-Install via pip:
-
-```bash
-pip install shadowcrypt
-```
-
-Or install from source:
-
-```bash
-git clone https://github.com/exampleuser/shadowcrypt.git
-cd shadowcrypt
-pip install .
-```
-
-Encrypt your Python file with a single command:
-
-```bash
-shadowcrypt encrypt yourfile.py -o locked.py
-python locked.py
-```
-
-Your `locked.py` runs exactly like the original — but your source code remains completely hidden and secure.
+> ShadowCrypt is the most extreme Python encryptor ever built.
+> - Turns `.py` files into **unreadable** but **runnable** scripts.
+> - No one can decrypt — **not even you**.
+> - AI & reverse engineers fail. Every time.
 
 ---
 
 ## ⚙️ How It Works
 
 ```mermaid
-graph LR
-    A[Original .py file] --> B[Encrypt with ShadowCrypt]
-    B --> C[Unreadable locked.py]
-    C --> D[Executes Normally]
-    C -.-> X[Decryption Impossible]
-    X -.-> Y[Not even ShadowCrypt creator!]
+graph TD
+    A[Original .py file] --> B[Encrypt with ShadowCrypt 🔐]
+    B --> C[🔒 Unreadable locked.py]
+    C --> D[🧠 Executes Normally]
+    C -. 🚫 Decryption Not Possible .-> X[❌ Not even ShadowCrypt creator!]
 ```
 
 ---
 
-## 🧪 Example Usage
+## 🧠 Features
+
+| Feature                             | Status     |
+|------------------------------------|------------|
+| Encrypts readable `.py` files      | ✅ Yes     |
+| Output is still executable         | ✅ Yes     |
+| Decryption possible?               | ❌ Never   |
+| AI & LLM decoding resistance       | ✅ Yes     |
+| Human reverse-proof                | ✅ Yes     |
+| Cross-platform (Win/Linux/Android) | ✅ Yes     |
+
+---
+
+## 📦 Installation
 
 ```bash
-shadowcrypt encrypt ai_brain.py -o secret_run.py
-python secret_run.py  # 🔥 Runs flawlessly
+pip install shadowcrypt
+```
+
+or from source:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/shadowcrypt.git
+cd shadowcrypt
+pip install .
 ```
 
 ---
 
-## 🛡 Security Design
+## 🔐 Encrypt Your File
 
-- ⚠️ No base64, no marshal, no eval — only layered mathematical encryption
-- 🔑 Randomized encryption applied per character for maximum unpredictability
-- 🔒 No decryptor or key included in any public package
-- 💥 Reverse engineering attempts always fail, guaranteed
+```bash
+shadowcrypt encrypt yourcode.py -o locked.py
+python locked.py
+```
 
-Even with full access to the encryptor source and encrypted files, decryption remains impossible.
-
----
-
-## ❓ FAQ
-
-**Q: Can I decrypt the encrypted files?**  
-A: Absolutely not. Decryption is intentionally impossible to ensure your code’s security.
-
-**Q: Will the encrypted file run on any platform?**  
-A: Yes! ShadowCrypt is fully cross-platform and works on Windows, Linux, macOS, and Android (Termux).
-
-**Q: Is the encryption safe from AI reverse engineering?**  
-A: Yes, it is specifically designed to resist both AI and human reverse engineering attempts.
-
-**Q: Do I need any special dependencies to run encrypted files?**  
-A: No, encrypted files run with the standard Python interpreter without any additional dependencies.
+➡️ Still runs.  
+🚫 Cannot be reversed.  
+✅ Remains yours.
 
 ---
 
-## 🤝 Contributing
+## 💻 Terminal Simulation
 
-We welcome contributions! Please fork the repository and submit pull requests. For major changes, open an issue first to discuss your ideas.
+```bash
+> shadowcrypt encrypt ai_model.py -o brain.py
+> python brain.py
+🔐 Encrypting with advanced math...
+✅ Saved to brain.py
+💥 Launching encrypted code...
+👁️ Source Visibility: ZERO
+```
 
 ---
 
-## 📬 Contact
+## 🎞 Hacker Feel
 
-For support or inquiries, reach out to Farhan Jihady via GitHub or email.
+<div align="center">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="480"/>
+</div>
+
+---
+
+## 🛡️ Security Design
+
+- 🔐 Pure math logic (no marshal, base64, eval)
+- 💣 Randomized characters with trigonometric transformations
+- 🔥 No decryptor in package — only encryption
+- 🧠 Reverse engineering = impossible
+
+> ShadowCrypt is not obfuscation — it’s mathematical exile.
 
 ---
 
 ## 📜 License
 
-MIT — Open-source and developer friendly  
-Built for creators who want to protect their work.
+MIT — Free to use.  
+Impossible to decrypt.
 
-<p align="center"> <i>Crafted by</i><br/> 🧠 <b>Farhan Jihady</b><br/> 🔮 <code>The Cipher Architect</code> </p>
+---
+
+<div align="center">
+
+<img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=00FF99&center=true&vCenter=true&width=450&lines=Crafted+by+Farhan+Jihady;Cipher+Architect+of+the+Undecodable" alt="Typing Signature" />
+
+</div>
