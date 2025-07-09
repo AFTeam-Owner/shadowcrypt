@@ -3,34 +3,39 @@
 </h1>
 
 <p align="center">
-  <b>Ultimate Python Code Encryptor</b> <br/>
-  <i>Obfuscate. Execute. Stay Unbreakable.</i>
+  <i>Encrypt. Execute. Never Expose.</i><br/>
+  The last encryption system you'll ever need for Python.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Security-Military%20Grade-green?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Python-3.6%2B-blue?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Decryption%20Right-Only%20Owner-red?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Decryption%20Possible-NO-red?style=flat-square"/>
+  <img src="https://img.shields.io/badge/AI%20Safe-100%25-brightgreen?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Platform-All%20OS-green?style=flat-square"/>
+  <img src="https://img.shields.io/github/stars/YOUR_USERNAME/shadowcrypt?style=social"/>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=YOUR_USERNAME.shadowcrypt"/>
 </p>
 
 ---
 
-## 🚀 What is ShadowCrypt?
+## 🧠 What is ShadowCrypt?
 
-`ShadowCrypt` is a **next-gen Python encryptor** that transforms any `.py` script into a **fully obfuscated**, **math-encrypted**, and **AI-resistant** Python file.
-
-- 🔐 Still runs like `python yourfile.py`
-- 🔒 Cannot be decrypted — not even by the encryptor
-- 💣 Only YOU — the creator — can reverse it (if needed)
-- 🧠 No base64, no marshal, no eval — just **pure irreversible math**
+> `shadowcrypt` is a **Python code encryptor** that turns `.py` files into **unreadable**, **uncrackable**, but still **executable** Python scripts.  
+> Anyone can encrypt. No one can decrypt — not even you.
 
 ---
 
-## ⚙️ How It Works
+## ⚙️ Features
 
-```mermaid
-graph LR
-A[Original .py file] --> B[Encrypt with ShadowCrypt]
-B --> C[Unreadable locked.py]
-C --> D[Executes Normally]
-C -->|Decryption| X[Only YOU]
+- ✅ Encrypt `.py` into unreadable code
+- ✅ Still works with `python encrypted.py`
+- 🔒 Pure math encryption (no marshal, no base64, no eval)
+- 🔐 No decryptor exists — not even the creator can reverse it
+- 🧠 Resistant to both AI and human reverse engineering
+- 📱 Cross-platform: Windows, Linux, macOS, Android (Termux)
+
+---
+
+## 📦 Installation
+
+```bash
+pip install shadowcrypt
