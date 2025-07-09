@@ -38,7 +38,7 @@
 ## 📦 Installation
 
 ```bash
-pip install shadowcrypt
+pip install shadowcrypt```
 
 Or install from source:
 ```bash
