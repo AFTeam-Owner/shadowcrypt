@@ -30,7 +30,7 @@ graph TD
     A[📄 Original .py file] --> B[✍️ Encrypt with ShadowCrypt]
     B --> C[🔐 Unreadable locked.py]
     C --> D[🧠 Executes Normally]
-    C -.-> E[🚫 Decryption Not Possible<br>❌ Not even ShadowCrypt creator!]
+    C -.-> E[🚫 Decryption Not Possible<br>❌ Not even ShadowCrypt<br>creator!]
 ```
 
 ---
