@@ -6,10 +6,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Decryption%20Possible-NO-red?style=flat-square" alt="No Decryption Possible"/>
-  <img src="https://img.shields.io/badge/AI%20Safe-100%25-brightgreen?style=flat-square" alt="AI Safe"/>
-  <img src="https://img.shields.io/badge/Platform-All%20OS-green?style=flat-square" alt="Cross Platform"/>
-  <img src="https://img.shields.io/github/stars/exampleuser/shadowcrypt?style=social" alt="GitHub stars"/>
+  <img src="https://img.shields.io/badge/Decryption%20Possible-NO-red?style=flat-square&animation=glow" alt="No Decryption Possible"/>
+  <img src="https://img.shields.io/badge/AI%20Safe-100%25-brightgreen?style=flat-square&animation=glow" alt="AI Safe"/>
+  <img src="https://img.shields.io/badge/Platform-All%20OS-green?style=flat-square&animation=glow" alt="Cross Platform"/>
+  <img src="https://img.shields.io/github/stars/exampleuser/shadowcrypt?style=social&label=Stars&color=yellow&logo=github&logoColor=white&animation=glow" alt="GitHub stars"/>
   <img src="https://visitor-badge.laobi.icu/badge?page_id=exampleuser.shadowcrypt" alt="Visitor Badge"/>
 </p>
 
