@@ -1,4 +1,8 @@
 <h1 align="center">
+  🕶️ SHADOWCRYPT - Encrypt. Execute. Never Expose.
+</h1>
+
+<h1 align="center">
   <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=24&pause=1000&color=FF44CC&center=true&vCenter=true&width=550&lines=🕶️+SHADOWCRYPT;Encrypt.+Execute.+Never+Expose.;AI+proof+.+Human+proof+.+Undecodable." alt="Typing SVG" />
 </h1>
 
@@ -7,35 +11,36 @@
   <img src="https://img.shields.io/badge/AI%20Proof-✅-green?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Platform-All%20OS-blue?style=for-the-badge&logo=linux"/>
   <img src="https://badgen.net/badge/Encrypted%20Lines/∞/purple?icon=code"/>
-  <img src="https://img.shields.io/github/stars/YOUR_USERNAME/shadowcrypt?style=social"/>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=YOUR_USERNAME.shadowcrypt"/>
+  <img src="https://img.shields.io/github/stars/AFTeam-Owner/shadowcrypt?style=social"/>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=AFTeam-Owner.shadowcrypt"/>
 </p>
 
 ---
 
-## 💣 What is ShadowCrypt?
+💣 What is ShadowCrypt?
+ShadowCrypt isn’t just a tool — it’s an ideology.
+Made for those who encrypt not to hide, but to rule.
 
-> ShadowCrypt is the most extreme Python encryptor ever built.
-> - Turns `.py` files into **unreadable** but **runnable** scripts.
-> - No one can decrypt — **not even you**.
-> - AI & reverse engineers fail. Every time.
+- Turns `.py` files into undecodeable yet runnable binaries.
+- Math-based transformation — no marshal, no base64, no mercy.
+- Uncrackable by AI, LLMs, or even the original author.
+- No decryptor exists. That’s the point.
 
 ---
 
-## ⚙️ How It Works
+⚙️ How It Works
 
 ```mermaid
-%%{ init { 'theme': 'default', 'themeVariables': { 'primaryColor': '#9b59b6', 'edgeLabelBackground':'#ffffff', 'fontSize':'16px', 'fontFamily':'Fira Code', 'textColor': '#000000' } } }%%
 graph TD
-    A[📄 Original .py file] --> B[✍️ Encrypt with ShadowCrypt]
-    B --> C[🔐 Unreadable locked.py]
+    A[Original .py file] --> B[Encrypt with ShadowCrypt 🔐]
+    B --> C[🔒 Unreadable locked.py]
     C --> D[🧠 Executes Normally]
-    C -.-> E[🚫 Decryption Not Possible<br>❌ Not even ShadowCrypt<br>creator!]
+    C -. 🚫 Decryption Not Possible .-> X[❌ Not even ShadowCrypt<br>creator!]
 ```
 
 ---
 
-## 🧠 Features
+🧠 Features
 
 | Feature                             | Status     |
 |------------------------------------|------------|
@@ -48,7 +53,7 @@ graph TD
 
 ---
 
-## 📦 Installation
+📦 Installation
 
 ```bash
 pip install shadowcrypt
@@ -57,14 +62,14 @@ pip install shadowcrypt
 or from source:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/shadowcrypt.git
+git clone https://github.com/AFTeam-Owner/shadowcrypt.git
 cd shadowcrypt
 pip install .
 ```
 
 ---
 
-## 🔐 Encrypt Your File
+🔐 Encrypt Your File
 
 ```bash
 shadowcrypt encrypt yourcode.py -o locked.py
@@ -77,7 +82,7 @@ python locked.py
 
 ---
 
-## 💻 Terminal Simulation
+💻 Terminal Simulation
 
 ```bash
 > shadowcrypt encrypt ai_model.py -o brain.py
@@ -90,7 +95,7 @@ python locked.py
 
 ---
 
-## 🧬 Execution Preview
+🧬 Execution Preview
 
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="480"/>
@@ -98,26 +103,91 @@ python locked.py
 
 ---
 
-## 👤 Developer Identity
+👤 Developer Identity — Farhan Jihady (AFTeam Owner)
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=00FF99&center=true&vCenter=true&width=480&lines=Created+by+GAMING+WITH+FARHAN+JIHADY;Built+for+Bangladeshi+Hackers+and+Makers;Encrypting+Python+for+the+Underground+Elite;No+Backdoor+.+No+Escape+.+Only+Run" alt="Typing Identity" />
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=00FF99&center=true&vCenter=true&width=550&lines=Created+by+GAMING+WITH+FARHAN+JIHADY;Built+for+Bangladeshi+Hackers+and+Makers;Encrypting+Python+for+the+Underground+Elite;No+Backdoor+.+No+Escape+.+Only+Run" alt="Typing Identity" />
 </div>
 
 ---
 
-## 🛡️ Security Design
+🧠 Who is Farhan?
 
-- 🔐 Pure math logic (no marshal, base64, eval)
-- 💣 Randomized characters with trigonometric transformations
-- 🔥 No decryptor in package — only encryption
-- 🧠 Reverse engineering = impossible
-
-> ShadowCrypt is not obfuscation — it’s mathematical exile.
+- 🕶️ Code-named: Monarch of Shadows
+- 🔥 Founder: https://infinityprompt.com — Where AI meets raw logic
+- 💣 Specialty: Telegram frameworks, secure API systems, AI-resistant encryption
+- 🧠 Philosophy: Silent. Strategic. Ruthless in logic.
+- 🖤 Based in: Bangladesh 🇧🇩 | Mindset: Global
 
 ---
 
-## 📜 License
+🛠️ Tech Stack & Interests
+
+| Area                  | Tools / Skills                                       |
+|-----------------------|------------------------------------------------------|
+| 🧠 AI + Logic          | LLM API Systems, File-Based AI, OpenAI Proxy         |
+| 🔐 Security           | Python Encryption, Telegram Bot Firewalls, Key-based APIs |
+| 📦 File Architecture  | Pure file systems, no-SQL data management            |
+| 💬 Chatbots           | Conversational AI with human-like depth              |
+| 🎯 Automation         | Code runners, attackers, mass-senders, search engines |
+| 🎨 Creative Dev       | Markdown/GitHub identity, Deface UIs, Terminal vibes |
+| 💻 Platforms          | Android (Termux), Linux, Windows (Low-End PC)        |
+
+---
+
+🧩 Project Highlights
+
+- 🛡️ ShadowCrypt — Undecodable Python encryption (math-based, AI-proof)
+- 🧠 Samurai API — File-based LLM API with key+point+expiry security
+- 🧠 InfinityPrompt — Multi-model AI platform with role/reseller system
+- 🛰️ Auto Bots — Telegram bots that forward media, search data, and manage file backups
+- 🔐 Key Systems — Full control: user limits, expiry, JSON history, hourly usage stats
+
+---
+
+📜 Developer's Oath
+
+> I don't build for everyone.  
+> I build for the ones who never ask permission, who move in silence,  
+> who write logic, not syntax —  
+> and who never leave a backdoor.
+
+---
+
+🔗 Connect with the Operator
+
+| Platform     | Link                                                                 |
+|--------------|----------------------------------------------------------------------|
+| 🔥 GitHub     | https://github.com/AFTeam-Owner                                      |
+| 🎧 YouTube    | https://youtube.com/@the_song_store                                  |
+| 🧪 Telegram   | https://t.me/AFTeamOwner                                              |
+| 📧 Email      | farhanbd637@gmail.com                                                |
+| 🌐 Website    | https://infinityprompt.com                                           |
+
+---
+
+🎭 Alternate Titles
+
+- 🔹 Silent Strategist  
+- 🔹 Bangladeshi Encryption Architect  
+- 🔹 Underground Framework Coder  
+- 🔹 AI-Fighter. Logic-Driven. Emotion-Coded.
+
+---
+
+🛡️ Security Design
+
+- 🔐 No marshal. No base64. No eval.
+- 🧮 Pure math + character randomization + trig functions
+- 🔥 No decryptor — by design
+- 🧠 Impossible to reverse, even theoretically
+
+> ShadowCrypt isn’t obfuscation — it’s mathematical exile.
+
+---
+
+📜 License
 
 MIT — Free to use.  
-Impossible to decrypt.
+But once encrypted, it’s yours and only yours —  
+No backup. No undo. No surrender.
