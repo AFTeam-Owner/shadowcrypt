@@ -89,10 +89,18 @@ python locked.py
 
 ---
 
-## 🎞 Hacker Feel
+## 🧬 Execution Preview
 
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="480"/>
+</div>
+
+---
+
+## 👤 Developer Identity
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=00FF99&center=true&vCenter=true&width=480&lines=Created+by+GAMING+WITH+FARHAN+JIHADY;Built+for+Bangladeshi+Hackers+and+Makers;Encrypting+Python+for+the+Underground+Elite;No+Backdoor+.+No+Escape+.+Only+Run" alt="Typing Identity" />
 </div>
 
 ---
@@ -112,11 +120,3 @@ python locked.py
 
 MIT — Free to use.  
 Impossible to decrypt.
-
----
-
-<div align="center">
-
-<img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=1000&color=00FF99&center=true&vCenter=true&width=450&lines=Crafted+by+Farhan+Jihady;Cipher+Architect+of+the+Undecodable" alt="Typing Signature" />
-
-</div>
