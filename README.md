@@ -191,3 +191,9 @@ python locked.py
 MIT — Free to use.  
 But once encrypted, it’s yours and only yours —  
 No backup. No undo. No surrender.
+
+---
+
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=22&pause=1200&color=FA00FF&center=true&vCenter=true&width=700&lines=I+am+the+dev+who+built+a+universe+in+silence...;It+doesn't+beg+to+be+seen+.+.+.+It+just+runs+.+.+.+like+me." alt="Typing SVG" />
+</h1>
