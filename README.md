@@ -58,13 +58,13 @@ python locked.py
 but no one can see or recover your source code.
 
 ⚙️ How It Works
-
+```mermaid
 graph LR
     A[Original .py file] --> B[Encrypt with ShadowCrypt]
     B --> C[Unreadable locked.py]
     C --> D[Executes Normally]
     C -. Decryption Not Possible .-> X[Not even ShadowCrypt creator!]
-
+```
 🧪 Example
 ```bash
 shadowcrypt encrypt ai_brain.py -o secret_run.py
