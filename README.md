@@ -47,3 +47,43 @@ git clone https://github.com/YOUR_USERNAME/shadowcrypt.git
 cd shadowcrypt
 pip install .
 ```
+
+🔐 Encrypt your Python file
+```bash
+shadowcrypt encrypt yourfile.py -o locked.py
+python locked.py
+```
+
+➡️ locked.py now runs like the original,
+but no one can see or recover your source code.
+
+⚙️ How It Works
+
+graph LR
+    A[Original .py file] --> B[Encrypt with ShadowCrypt]
+    B --> C[Unreadable locked.py]
+    C --> D[Executes Normally]
+    C -. Decryption Not Possible .-> X[Not even ShadowCrypt creator!]
+
+🧪 Example
+```bash
+shadowcrypt encrypt ai_brain.py -o secret_run.py
+python secret_run.py  # 🔥 Runs flawlessly
+```
+
+🛡 Security Design
+⚠️ No base64, no marshal, no eval — only layered math
+
+🔑 Randomized encryption per character
+
+🔒 No decryptor or key ever included in public package
+
+💥 Reverse engineering fails — always
+
+Even if someone has the source code of the encryptor and encrypted file, they still can't decrypt it.
+
+📜 License
+MIT — Open-source and developer friendly
+Built for creators who don’t want to be copied.
+
+<p align="center"> <i>Crafted by</i><br/> 🧠 <b>Farhan Jihady</b><br/> 🔮 <code>The Cipher Architect</code> </p> 
