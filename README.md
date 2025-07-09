@@ -38,11 +38,12 @@
 ## 📦 Installation
 
 ```bash
-pip install shadowcrypt```
+pip install shadowcrypt
+```
 
 Or install from source:
 ```bash
 git clone https://github.com/YOUR_USERNAME/shadowcrypt.git
 cd shadowcrypt
 pip install .
-
+```
