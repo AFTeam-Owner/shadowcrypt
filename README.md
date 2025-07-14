@@ -138,7 +138,6 @@ shadowcrypt run lock.shc
 🧩 Project Highlights
 
 - 🛡️ ShadowCrypt — Undecodable Python encryption (math-based, AI-proof)
-- 🧠 Samurai API — File-based LLM API with key+point+expiry security
 - 🧠 InfinityPrompt — Multi-model AI platform with role/reseller system
 - 🛰️ Auto Bots — Telegram bots that forward media, search data, and manage file backups
 - 🔐 Key Systems — Full control: user limits, expiry, JSON history, hourly usage stats
