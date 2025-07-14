@@ -33,7 +33,7 @@ Made for those who encrypt not to hide, but to rule.
 ```mermaid
 graph TD
     A[Original .py file] --> B[Encrypt with ShadowCrypt 🔐]
-    B --> C[🔒 Unreadable locked.py]
+    B --> C[🔒 Unreadable lock.shc]
     C --> D[🧠 Executes Normally]
     C -. 🚫 Decryption Not Possible .-> X[❌ Not even ShadowCrypt<br>creator!]
 ```
@@ -72,8 +72,8 @@ pip install .
 🔐 Encrypt Your File
 
 ```bash
-shadowcrypt encrypt yourcode.py -o locked.py
-python locked.py
+shadowcrypt encrypt yourcode.py -o lock.shc
+shadowcrypt run lock.shc
 ```
 
 ➡️ Still runs.  
