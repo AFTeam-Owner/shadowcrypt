@@ -72,8 +72,8 @@ pip install .
 🔐 Encrypt Your File
 
 ```bash
-shadowcrypt encrypt yourcode.py -o lock.shc
-shadowcrypt run lock.shc
+shadowcrypt-encrypt script.py -o output.shc
+shadowcrypt-run output.shc
 ```
 
 ➡️ Still runs.  
@@ -85,8 +85,8 @@ shadowcrypt run lock.shc
 💻 Terminal Simulation
 
 ```bash
-> shadowcrypt encrypt ai_model.py -o brain.py
-> python brain.py
+> shadowcrypt-encrypt script.py -o output.shc
+> shadowcrypt-run output.shc
 🔐 Encrypting with advanced math...
 ✅ Saved to brain.py
 💥 Launching encrypted code...
