@@ -159,7 +159,7 @@ shadowcrypt-run output.shc
 |--------------|----------------------------------------------------------------------|
 | 🔥 GitHub     | https://github.com/AFTeam-Owner                                      |
 | 🎧 YouTube    | https://youtube.com/@the_song_store                                  |
-| 🧪 Telegram   | https://t.me/AFTeamOwner                                              |
+| 🧪 Telegram   | https://t.me/AF_Team_Owner                                              |
 | 📧 Email      | farhanbd637@gmail.com                                                |
 | 🌐 Website    | https://infinityprompt.com                                           |
 
