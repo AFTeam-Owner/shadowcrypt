@@ -1,91 +1,86 @@
 from cpython.mem cimport PyMem_Malloc, PyMem_Free
-from libc.stdio cimport FILE, fopen, fread, fclose, fseek, ftell, SEEK_END, SEEK_SET
-from libc.string cimport memset, fgets
+from cpython.ref cimport PyObject
+from libc.stdio cimport FILE, fopen, fread, fclose, fseek, ftell, SEEK_END, SEEK_SET, sscanf
+from libc.stdlib cimport malloc, free
+from libc.string cimport memset, memcpy, strcmp
+from libc.time cimport time
+
 import sys
 import os
-import struct
-import base64
-import subprocess
+import builtins
 
-BLOCK_SIZE = 16
-ROUNDS = 20
+cdef unsigned char decrypt_char(unsigned char b):
+    # Reverse of E(x) = (x*3 + 7) % 256
+    # Modular inverse of 3 mod 256 is 171
+    return (171 * (b - 7)) % 256
 
-cdef unsigned char SINE_TABLE[256]
-cdef unsigned char COSINE_TABLE[256]
-
-def _init_tables():
-    import math
-    cdef int i
-    for i in range(256):
-        SINE_TABLE[i] = <unsigned char>int((math.sin(i / 256.0 * 2 * math.pi) + 1) * 127.5) & 0xFF
-        COSINE_TABLE[i] = <unsigned char>int((math.cos(i / 256.0 * 2 * math.pi) + 1) * 127.5) & 0xFF
-
-cdef unsigned char complex_transform_inverse(unsigned char b, int round_num):
-    cdef int x
-    cdef unsigned char val
-    for x in range(256):
-        val = (x * 7 + 13 + SINE_TABLE[(x + round_num) % 256]) % 256
-        val = (val + COSINE_TABLE[(val * round_num) % 256]) % 256
-        val = val ^ ((round_num * 31) & 0xFF)
-        if val == b:
-            return <unsigned char>x
-    return 0
-
-cdef bytes inverse_permute_block(bytes block):
-    cdef int perm[16] = [3, 7, 12, 1, 14, 0, 9, 5, 11, 2, 15, 8, 6, 13, 4, 10]
-    cdef unsigned char inv[16]
-    cdef int i
-    for i in range(16):
-        inv[perm[i]] = i
-    cdef unsigned char res[16]
-    for i in range(16):
-        res[i] = block[inv[i]]
-    return bytes(res)
-
-cdef bytes decrypt_block(bytes block, int round_num):
-    cdef bytes permuted = inverse_permute_block(block)
-    cdef unsigned char res[16]
-    cdef int i
-    for i in range(16):
-        res[i] = complex_transform_inverse(permuted[i], round_num)
-    return bytes(res)
-
-def simple_checksum(bytes data):
-    cdef unsigned int csum = 0
-    cdef int i
-    for i in range(len(data)):
-        csum = (csum + data[i]) & 0xFFFFFFFF
-    return csum
-
-def anti_debug():
+cdef int check_ptrace():
+    # Linux ptrace detection by reading /proc/self/status using Python file IO
     try:
-        if sys.gettrace() is not None:
-            return True
-    except:
-        pass
-    if os.environ.get('LD_PRELOAD'):
-        return True
-    try:
-        with open('/proc/self/status', 'r') as f:
+        with open("/proc/self/status", "r") as f:
             for line in f:
-                if line.startswith('TracerPid:'):
+                if line.startswith("TracerPid:"):
                     tracerpid = int(line.split()[1])
                     if tracerpid != 0:
-                        return True
+                        return 1
+                    else:
+                        return 0
     except:
-        pass
+        return 0
+    return 0
+
+cdef int check_ld_preload():
+    # Check if LD_PRELOAD is set
+    cdef bytes ld = os.environ.get("LD_PRELOAD", "").encode()
+    if ld:
+        return 1
+    return 0
+
+cdef int check_debugger():
+    # Check sys.gettrace
+    if sys.gettrace() is not None:
+        return 1
+    return 0
+
+cdef int check_proc_debug():
+    # Check for presence of gdb or strace in /proc/self/maps or /proc/self/status
     try:
-        output = subprocess.check_output(['ps', 'aux'], text=True)
-        debuggers = ['gdb', 'lldb', 'strace', 'ltrace', 'ida', 'ollydbg']
-        for dbg in debuggers:
-            if dbg in output:
-                return True
+        with open("/proc/self/maps", "r") as f:
+            maps = f.read()
+            if "gdb" in maps or "strace" in maps:
+                return 1
     except:
         pass
-    return False
+    return 0
+
+cdef int anti_debug():
+    if check_ptrace():
+        return 1
+    if check_ld_preload():
+        return 1
+    if check_debugger():
+        return 1
+    if check_proc_debug():
+        return 1
+    return 0
+
+cdef void secure_memzero(void* ptr, size_t len):
+    # Securely zero memory
+    cdef volatile char* p = <volatile char*>ptr
+    cdef size_t i
+    for i in range(len):
+        p[i] = 0
+
+cdef unsigned char* decrypt_data(unsigned char* data, size_t length):
+    cdef unsigned char* decrypted = <unsigned char*>PyMem_Malloc(length)
+    if not decrypted:
+        return NULL
+    cdef size_t i
+    for i in range(length):
+        decrypted[i] = decrypt_char(data[i])
+    return decrypted
 
 def run_shc(str filepath):
-    _init_tables()
     if anti_debug():
         print("Debugging detected. Exiting.")
         return
@@ -95,24 +90,26 @@ def run_shc(str filepath):
         print("Failed to open file.")
         return
 
-    cdef unsigned char header[56]
-    cdef size_t read_bytes = fread(header, 1, 56, f)
-    if read_bytes != 56:
+    cdef unsigned char header[44]
+    cdef size_t read_bytes = fread(header, 1, 44, f)
+    if read_bytes != 44:
         fclose(f)
         print("Invalid file format.")
         return
 
-    cdef unsigned int checksum = struct.unpack('>I', bytes(header[0:4]))[0]
-    cdef unsigned int version = struct.unpack('>I', bytes(header[4:8]))[0]
+    # Parse header: 32 bytes hash, 4 bytes version, 8 bytes timestamp
+    cdef unsigned char* hash_digest = header
+    cdef unsigned int version = (header[32] << 24) | (header[33] << 16) | (header[34] << 8) | header[35]
     cdef unsigned long long timestamp = 0
     cdef int i
     for i in range(8):
-        timestamp = (timestamp << 8) | header[8 + i]
+        timestamp = (timestamp << 8) | header[36 + i]
 
+    # Read encrypted data
     fseek(f, 0, SEEK_END)
     cdef size_t file_size = ftell(f)
-    cdef size_t data_size = file_size - 56
-    fseek(f, 56, SEEK_SET)
+    cdef size_t data_size = file_size - 44
+    fseek(f, 44, SEEK_SET)
 
     cdef unsigned char* encrypted_data = <unsigned char*>PyMem_Malloc(data_size)
     if not encrypted_data:
@@ -127,33 +124,31 @@ def run_shc(str filepath):
         print("Failed to read encrypted data.")
         return
 
-    cdef bytes data = bytes([encrypted_data[i] for i in range(data_size)])
+    # Decrypt data
+    cdef unsigned char* decrypted_data = decrypt_data(encrypted_data, data_size)
     PyMem_Free(encrypted_data)
-
-    cdef int round_num
-    for round_num in range(ROUNDS - 1, -1, -1):
-        cdef bytearray new_data = bytearray()
-        cdef int offset
-        for offset in range(0, len(data), BLOCK_SIZE):
-            block = data[offset:offset + BLOCK_SIZE]
-            decrypted_block = decrypt_block(block, round_num)
-            new_data.extend(decrypted_block)
-        data = bytes(new_data)
-
-    cdef unsigned int computed_checksum = simple_checksum(data)
-    if computed_checksum != checksum:
-        print("Checksum mismatch. File corrupted or tampered.")
+    if not decrypted_data:
+        print("Decryption failed.")
         return
 
-    cdef unsigned char padding_len = data[-1]
-    if padding_len > 0 and padding_len <= BLOCK_SIZE:
-        data = data[:-padding_len]
+    # Verify hash
+    import hashlib
+    cdef bytes decrypted_bytes = bytes([decrypted_data[i] for i in range(data_size)])
+    cdef bytes computed_hash = hashlib.sha256(decrypted_bytes).digest()
+    if computed_hash != bytes(hash_digest[:32]):
+        secure_memzero(decrypted_data, data_size)
+        PyMem_Free(decrypted_data)
+        print("Hash mismatch. File corrupted or tampered.")
+        return
 
+    # Execute code in memory without storing plaintext string
+    # Use builtins.exec with a code object compiled from decrypted bytes
     try:
-        code_str = data.decode('utf-8')
-        code_str = base64.b64decode(code_str.encode('ascii')).decode('utf-8')
-        code_obj = compile(code_str, filepath, 'exec')
-        exec(code_obj, globals())
+        code_obj = compile(decrypted_bytes.decode('utf-8'), filepath, 'exec')
+        exec(code_obj, globals(), globals())
     except Exception as e:
         print("Execution error:", e)
-</create_file>
+
+    # Securely clear decrypted data from memory
+    secure_memzero(decrypted_data, data_size)
+    PyMem_Free(decrypted_data)
