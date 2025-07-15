@@ -1,13 +1,9 @@
 from setuptools import setup, Extension, find_packages
 from Cython.Build import cythonize
-from pathlib import Path
 
 def read_requirements():
     with open('requirements.txt') as f:
         return f.read().splitlines()
-
-this_dir = Path(__file__).parent
-long_description = (this_dir / "README.md").read_text(encoding='utf-8')
 
 extensions = [
     Extension(
@@ -20,14 +16,21 @@ setup(
     name="shadowseal",
     version="0.1.0",
     description="Secure Python encryptor and loader",
-    long_description=long_description,
+    long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Monarch of Shadows",
     author_email="farhanbd637@gmail.com",
     url="https://github.com/AFTeam-Owner/shadowseal",
-    license="MIT",
-    python_requires=">=3.8",
+    project_urls={
+        "Bug Tracker": "https://github.com/AFTeam-Owner/shadowseal/issues",
+    },
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
     packages=find_packages(),
+    include_package_data=True,
     ext_modules=cythonize(extensions, compiler_directives={'language_level': "3"}),
     install_requires=read_requirements(),
     entry_points={
@@ -35,14 +38,6 @@ setup(
             'shadowseal=shadowseal.cli:main',
         ],
     },
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Cython",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-        "Development Status :: 4 - Beta",
-        "Intended Audience :: Developers",
-        "Topic :: Security :: Cryptography",
-    ],
+    python_requires='>=3.7',
     zip_safe=False,
 )
