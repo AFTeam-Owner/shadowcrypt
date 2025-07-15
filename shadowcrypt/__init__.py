@@ -1,1 +1,0 @@
-# ShadowCrypt package initializer
