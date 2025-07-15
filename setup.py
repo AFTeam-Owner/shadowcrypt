@@ -1,26 +1,29 @@
-from setuptools import setup, find_packages
+from setuptools import setup, Extension, find_packages
+from Cython.Build import cythonize
+
+def read_requirements():
+    with open('requirements.txt') as f:
+        return f.read().splitlines()
+
+extensions = [
+    Extension(
+        "runner.cy_loader",
+        ["runner/cy_loader.pyx"],
+    )
+]
 
 setup(
-    name='shadowcrypt',
-    version='1.0.0',
-    description='A Python package to securely encrypt and run Python files with custom encryption and anti-debug features.',
-    author='Your Name',
-    author_email='your.email@example.com',
-    url='https://github.com/AFTeam-Owner/shadowcrypt',
+    name="shadowseal",
+    version="0.1.0",
+    description="Secure Python encryptor and loader",
+    author="Monarch of Shadows",
     packages=find_packages(),
-    python_requires='>=3.6',
-    classifiers=[
-        'Programming Language :: Python :: 3',
-        'Operating System :: OS Independent',
-        'License :: OSI Approved :: MIT License',
-    ],
+    ext_modules=cythonize(extensions, compiler_directives={'language_level': "3"}),
+    install_requires=read_requirements(),
     entry_points={
         'console_scripts': [
-            'shadowcrypt=shadowcrypt.cli:main',
-            'shadowcrypt-encrypt=encryptor.encrypt:main',
-            'shadowcrypt-run=runner.loader:main',
+            'shadowseal=shadowseal.cli:main',
         ],
     },
-    include_package_data=True,
     zip_safe=False,
 )
