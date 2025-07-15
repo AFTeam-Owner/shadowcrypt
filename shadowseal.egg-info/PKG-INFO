@@ -1,11 +1,10 @@
 Metadata-Version: 2.4
 Name: shadowseal
-Version: 0.1.0
+Version: 1.0.0
 Summary: Secure Python encryptor and loader
 Home-page: https://github.com/AFTeam-Owner/shadowseal
 Author: Monarch of Shadows
 Author-email: farhanbd637@gmail.com
-Project-URL: Bug Tracker, https://github.com/AFTeam-Owner/shadowseal/issues
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -20,7 +19,6 @@ Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
 Dynamic: license-file
-Dynamic: project-url
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary

@@ -27,3 +27,8 @@ utils/__init__.py
 utils/anti_debug.py
 utils/fileutils.py
 utils/systemcheck.py
+wheel_contents/encryptor/__init__.py
+wheel_contents/obfuscator/__init__.py
+wheel_contents/runner/__init__.py
+wheel_contents/shadowseal/__init__.py
+wheel_contents/utils/__init__.py
