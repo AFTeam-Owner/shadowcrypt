@@ -1,30 +1,30 @@
 [build-system]
-requires = ["setuptools>=42", "wheel", "cython"]
+requires = ["setuptools>=42", "wheel", "Cython"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "shadowseal"
 version = "0.1.0"
 description = "Secure Python encryptor and loader"
-readme = "README.md"
-license = { file = "LICENSE" }
 authors = [
     { name = "Monarch of Shadows", email = "farhanbd637@gmail.com" }
 ]
+readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.8"
 dependencies = [
-    # requirements.txt থেকে চাইলে এখানে ম্যানুয়ালি কপি করে রাখতে পারো
+    "cython"
 ]
+
+[project.scripts]
+shadowseal = "shadowseal.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/AFTeam-Owner/shadowseal"
-Source = "https://github.com/AFTeam-Owner/shadowseal"
 Repository = "https://github.com/AFTeam-Owner/shadowseal"
 
 [tool.setuptools]
 packages = ["encryptor", "engine", "obfuscator", "runner", "shadowseal", "utils"]
 
 [tool.setuptools.package-data]
-"runner" = ["*.pxd", "*.pyx", "*.c"]
-
-[tool.setuptools.cmdclass]
+"runner" = ["*.pyx", "*.pxd", "*.c"]
